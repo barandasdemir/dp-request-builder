@@ -33,12 +33,12 @@ document.querySelector("form").addEventListener('submit', e => {
     req = builder.build();
 
     setTimeout(() => {
+      req.nextState();
       fetch(`https://cors-anywhere.herokuapp.com/${req.url}`, {
         method: req.method,
         body: (req.method === 'GET' || req.method === 'HEAD') ? undefined : JSON.stringify(req.payload)
       })
         .then((res) => {
-          req.nextState();
           return res.text();
         })
         .then(text => {
