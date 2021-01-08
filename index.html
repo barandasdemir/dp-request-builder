@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>design patterns</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: black;
+        color: white;
+      }
+      input {
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+      }
+      input[type="range"] {
+        margin: 1rem 5.5rem;
+      }
+      #content {
+        width: 70%;
+        margin: 3rem auto;
+      }
+      h5, h6 {
+        margin: 0;
+        color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h5>to clearly see every state, each takes ~2 seconds.</h5>
+      <input type="range" min="1" max="5" value="2" />
+
+      <form>
+        <label for="url">URL:</label><br />
+        <input type="text" name="url" value="http://httpbin.org/get" /><br />
+        <p>Method:</p>
+        <input type="radio" name="method" value="GET" checked />
+        <label for="method">GET</label>
+        <input type="radio" name="method" value="POST" />
+        <label for="method">POST</label>
+        <input type="radio" name="method" value="PUT" />
+        <label for="method">PUT</label>
+        <input type="radio" name="method" value="PATCH" />
+        <label for="method">PATCH</label>
+        <input type="radio" name="method" value="DELETE" />
+        <label for="method">DELETE</label>
+        <h6><i>GET and HEAD does not support a body so it's not included when the request is sent</i></h6>
+
+        <p>Body</p>
+        <textarea name="body"></textarea>
+        <br /><br />
+
+        <input type="submit" value="Run" />
+      </form>
+
+      <p>Result:</p>
+      <pre id="res">waiting...</pre>
+    </div>
+
+    <script type="text/javascript" src="helper.js"></script>
+    <script type="text/javascript" src="state.js"></script>
+    <script type="text/javascript" src="builder.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
